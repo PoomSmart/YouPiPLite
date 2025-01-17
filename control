@@ -1,0 +1,9 @@
+Package: com.ps.youpiplite
+Name: YouPiPLite
+Depends: mobilesubstrate, firmware (>= 11.0)
+Version: 1.0.0
+Architecture: iphoneos-arm
+Description: Enable native PiP in iOS YouTube app.
+Maintainer: PoomSmart
+Author: PoomSmart
+Section: Tweaks
