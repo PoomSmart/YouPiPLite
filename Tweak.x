@@ -54,12 +54,12 @@ static void activatePiPBase(YTPlayerPIPController *controller) {
 
 %hook YTIIosMediaHotConfig
 
-%new(c@:)
+%new(B@:)
 - (BOOL)enablePictureInPicture {
     return YES;
 }
 
-%new(c@:)
+%new(B@:)
 - (BOOL)enablePipForNonPremiumUsers {
     return YES;
 }
