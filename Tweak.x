@@ -1,7 +1,5 @@
 #import "Header.h"
 #import <YouTubeHeader/MLPIPController.h>
-#import <YouTubeHeader/YTBackgroundabilityPolicy.h>
-#import <YouTubeHeader/YTBackgroundabilityPolicyImpl.h>
 #import <YouTubeHeader/YTPlayerPIPController.h>
 
 static void activatePiPBase(YTPlayerPIPController *controller) {
@@ -62,36 +60,6 @@ static void activatePiPBase(YTPlayerPIPController *controller) {
 %new(B@:)
 - (BOOL)enablePipForNonPremiumUsers {
     return YES;
-}
-
-%end
-
-#pragma mark - PiP Support, Backgroundable
-
-%hook YTBackgroundabilityPolicy
-
-- (void)updateIsBackgroundableByUserSettings {
-    %orig;
-    [self setValue:@(YES) forKey:@"_backgroundableByUserSettings"];
-}
-
-- (void)updateIsPictureInPicturePlayableByUserSettings {
-    %orig;
-    [self setValue:@(YES) forKey:@"_playableInPiPByUserSettings"];
-}
-
-%end
-
-%hook YTBackgroundabilityPolicyImpl
-
-- (void)updateIsBackgroundableByUserSettings {
-    %orig;
-    [self setValue:@(YES) forKey:@"_backgroundableByUserSettings"];
-}
-
-- (void)updateIsPictureInPicturePlayableByUserSettings {
-    %orig;
-    [self setValue:@(YES) forKey:@"_playableInPiPByUserSettings"];
 }
 
 %end
